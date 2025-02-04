@@ -11,7 +11,7 @@ app.use(cors());
 app.use(fileUpload());
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.7xx1x.mongodb.net/hungry-kitchen?retryWrites=true&w=majority`;
+const uri = process.env.DB_URI;
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
